@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:01:20 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/07 17:03:28 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/07 17:14:58 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ void init_args(int argc, char **argv, t_node **pile)
 		args = ft_split(argv[1], ' ');
 	else
 		args = argv + 1;
-
 	while (args[i])
 	{
-		value = ft_atoi(args[i]);
-		ft_lstadd_back(pile, ft_lstnew(value));
-		i++;
+		if (is_digit(args[i] == 0))
+		{
+			value = ft_atoi(args[i]);
+			ft_lstadd_back(pile, ft_lstnew(value));
+			i++;
+		}
 	}
 	if (argc == 2)
 		free_split(args);

@@ -6,11 +6,13 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:21:06 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/07 18:39:07 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:22:46 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_valid(const char *arg)
+#include "push_swap.h"
+
+int is_valid(char *arg)
 {
 	int i = 0;
 
@@ -28,6 +30,7 @@ int is_valid(const char *arg)
 	}
 	return (1);
 }
+
 int invalid_char (char **args)
 {
 	int i;
@@ -66,4 +69,29 @@ int check_double(char **argv)
 	return (0);
 }
 
+int is_overflow(char **args)
+{
+	long nb;
+	int i;
+
+	i = 0;
+	while(args[i])
+	{
+		nb = ft_atol(args[i]);
+		if (nb > 2147483647 || nb < -2147483648)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+int check_error(char **args)
+{
+	if(invalid_char(args))
+		return (1);
+	if(check_double(args))
+		return (1);
+	if(is_overflow(args))
+		return (1);
+	return(0);
+}
 

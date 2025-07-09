@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:32:48 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/02 16:37:12 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/08 16:37:54 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void sa(t_node **pile_a, int s)
 	t_node *first;
 	t_node *second;
 
-	if(!pile_a || ft_lstsize(*pile_a) < 2)
+	if(!pile_a || node_size(*pile_a) < 2)
 		return ;
 	first = *pile_a;
 	second = first->next;
@@ -33,7 +33,7 @@ void sb(t_node **pile_b, int s)
 	t_node *first;
 	t_node *second;
 
-	if(!pile_b || ft_lstsize(*pile_b) < 2)
+	if(!pile_b || node_size(*pile_b) < 2)
 		return ;
 	first = *pile_b;
 	second = first->next;

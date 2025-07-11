@@ -6,13 +6,13 @@
 #    By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/02 14:42:39 by saibelab          #+#    #+#              #
-#    Updated: 2025/07/08 16:53:11 by saibelab         ###   ########.fr        #
+#    Updated: 2025/07/11 13:20:43 by saibelab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = main.c arg_check.c node_utils.c utils1.c utils2.c
+SRCS = main.c arg_check.c node_utils.c utils1.c utils2.c basic_sort.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft

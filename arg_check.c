@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:21:06 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/08 16:22:46 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:50:15 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int is_overflow(char **args)
 	i = 0;
 	while(args[i])
 	{
+		if (ft_strlen(args[i]) == 12)
+			return (1);
 		nb = ft_atol(args[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 			return (1);

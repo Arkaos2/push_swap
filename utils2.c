@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 16:21:29 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/08 16:48:55 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/10 14:28:14 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void rrb(t_node **pile_b, int s)
 	if(!pile_b || node_size(*pile_b) < 2)
 		return ;
 
-	last = node_last(*pile_b);
+	last = *pile_b;
 	prev = NULL;
 
 	while (last->next)
@@ -86,7 +86,7 @@ void rra(t_node **pile_a, int s)
 	if(!pile_a || node_size(*pile_a) < 2)
 		return ;
 
-	last = node_last(*pile_a);
+	last = *pile_a;
 	prev = NULL;
 
 	while (last->next)
@@ -105,5 +105,5 @@ void rrr(t_node **pile_a, t_node **pile_b)
 {
 	rra(pile_a, 1);
 	rrb(pile_b, 1);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }

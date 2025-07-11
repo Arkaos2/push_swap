@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/02 14:01:20 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/08 17:12:07 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/11 14:35:58 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,47 @@ void print_pile(t_node *pile)
 	}
 }
 
+
 int main(int argc, char **argv)
 {
-	t_node *pile = NULL;
+	t_node *pile_a = NULL;
 
-	init_args(argc, argv, &pile);
-
-	printf("Contenu de la pile :\n");
-	print_pile(pile);
+	if (argc < 2)
+		return (0);
+	init_args(argc, argv, &pile_a);
+	sort_pile(pile_a, argc);
+	free_pile(pile_a);
+	return (0);
 }
-
-
 // int main(int argc, char **argv)
 // {
-
 // 	t_node *pile_a = NULL;
+// 	t_node *pile_b = NULL;
+// 	t_node *tmp;
 
 // 	if (argc < 2)
 // 		return (0);
 // 	init_args(argc, argv, &pile_a);
+// 	printf("Pile avant :\n");
+// 	tmp = pile_a;
+// 	while (tmp)
+// 	{
+// 		printf("%d\n", tmp->value);
+// 		tmp = tmp->next;
+// 	}
+// 	printf("\n");
+// 	if (node_size(pile_a) == 3)
+// 		sort_three(&pile_a);
+// 	else if (node_size(pile_a) == 4)
+// 		sort_four(&pile_a, &pile_b);
+// 	printf("\nPile apres :\n");
+// 	tmp = pile_a;
+// 	while (tmp)
+// 	{
+// 		printf("%d\n", tmp->value);
+// 		tmp = tmp->next;
+// 	}
+// 	free_pile(pile_a);
+// 	free_pile(pile_b);
+// 	return (0);
 // }

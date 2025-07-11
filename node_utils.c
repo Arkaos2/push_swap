@@ -6,7 +6,7 @@
 /*   By: saibelab <saibelab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 16:33:43 by saibelab          #+#    #+#             */
-/*   Updated: 2025/07/08 16:35:46 by saibelab         ###   ########.fr       */
+/*   Updated: 2025/07/11 13:24:07 by saibelab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,14 @@ t_node	*node_last(t_node *lst)
 	while (lst->next)
 		lst = lst->next;
 	return lst;
+}
+void free_pile(t_node *pile)
+{
+	t_node *tmp;
+	while (pile)
+	{
+		tmp = pile;
+		pile = pile->next;
+		free(tmp);
+	}
 }

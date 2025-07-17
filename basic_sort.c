@@ -59,21 +59,32 @@ int find_min_pos(t_node *pile)
 	}
 	return (pos);
 }
-
+int is_sort(t_node *pile)
+{
+	while (pile && pile->next)
+	{
+		if (pile->value > pile->next->value)
+			return (0);
+		pile = pile->next;
+	}
+	return (1);
+}
 void sort_four(t_node **pile_a, t_node **pile_b)
 {
 	int pos = find_min_pos(*pile_a);
 	int size = node_size(*pile_a);
 	int i = 0;
-
 	if (pos <= size / 2)
 		while (i++ < pos)
 			ra(pile_a, 0);
 	else
 		while (i++ < size - pos)
 			rra(pile_a, 0);
-	pb(pile_a, pile_b);
-	sort_three(pile_a);
-	pa(pile_a, pile_b);
+	if (!is_sort(*pile_a))
+	{
+		pb(pile_a, pile_b);
+		sort_three(pile_a);
+		pa(pile_a, pile_b);
+	}
 }
 

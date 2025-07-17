@@ -58,5 +58,6 @@ void 	sort_three(t_node **pile_a);
 int		find_min_pos(t_node *pile);
 void	sort_four(t_node **pile_a, t_node **pile_b);
 void	sort_pile(t_node *pile, int argc);
+int		is_sort(t_node *pile_a);
 
 #endif

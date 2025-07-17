@@ -49,47 +49,35 @@ void print_pile(t_node *pile)
 	}
 }
 
-
 int main(int argc, char **argv)
 {
 	t_node *pile_a = NULL;
+	t_node *pile_b = NULL;
+	t_node *tmp;
 
 	if (argc < 2)
 		return (0);
 	init_args(argc, argv, &pile_a);
-	sort_pile(pile_a, argc);
+	printf("Pile avant :\n");
+	tmp = pile_a;
+	while (tmp)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	if (node_size(pile_a) == 3)
+		sort_three(&pile_a);
+	else if (node_size(pile_a) == 4)
+		sort_four(&pile_a, &pile_b);
+	printf("\nPile apres :\n");
+	tmp = pile_a;
+	while (tmp)
+	{
+		printf("%d\n", tmp->value);
+		tmp = tmp->next;
+	}
 	free_pile(pile_a);
+	free_pile(pile_b);
 	return (0);
 }
-// int main(int argc, char **argv)
-// {
-// 	t_node *pile_a = NULL;
-// 	t_node *pile_b = NULL;
-// 	t_node *tmp;
-
-// 	if (argc < 2)
-// 		return (0);
-// 	init_args(argc, argv, &pile_a);
-// 	printf("Pile avant :\n");
-// 	tmp = pile_a;
-// 	while (tmp)
-// 	{
-// 		printf("%d\n", tmp->value);
-// 		tmp = tmp->next;
-// 	}
-// 	printf("\n");
-// 	if (node_size(pile_a) == 3)
-// 		sort_three(&pile_a);
-// 	else if (node_size(pile_a) == 4)
-// 		sort_four(&pile_a, &pile_b);
-// 	printf("\nPile apres :\n");
-// 	tmp = pile_a;
-// 	while (tmp)
-// 	{
-// 		printf("%d\n", tmp->value);
-// 		tmp = tmp->next;
-// 	}
-// 	free_pile(pile_a);
-// 	free_pile(pile_b);
-// 	return (0);
-// }

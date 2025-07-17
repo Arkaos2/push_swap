@@ -40,6 +40,16 @@ void sort_tab(t_node *pile, int size, int *tab)
 	}
 }
 
+void sort_pile(t_node *pile, int argc)
+{
+	int *tab;
+
+	tab = malloc(sizeof(int) * (argc - 1));
+	if (!tab)
+		return;
+	sort_tab(pile, argc -1, tab);
+}
+
 int calc_chunk_size(int total_size, int nb_chunks, int chunk_index)
 {
 	int	size;
@@ -73,14 +83,4 @@ void init_chunks(t_chunk *chunks, int total_size, int nb_chunks)
 		start += size;
 		i++;
 	}
-}
-
-void sort_pile(t_node *pile, int argc)
-{
-	int *tab;
-
-	tab = malloc(sizeof(int) * (argc - 1));
-	if (!tab)
-		return;
-	sort_tab(pile, argc -1, tab);
 }

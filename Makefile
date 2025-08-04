@@ -12,7 +12,7 @@
 
 NAME = push_swap
 
-SRCS = main.c arg_check.c node_utils.c utils1.c utils2.c basic_sort.c chunks_sort.c
+SRCS = main.c arg_check.c node_utils.c utils1.c utils2.c basic_sort.c chunks_sort.c locate_utils.c init_chunks.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT_DIR = libft

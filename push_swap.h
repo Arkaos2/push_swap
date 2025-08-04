@@ -72,6 +72,5 @@ void push_chunks_to_b(t_node **pile_a, t_node **pile_b, t_chunk *chunks, int nb_
 void return_to_a(t_node **pile_a, t_node **pile_b);
 int find_max_position(t_node *pile);
 void chunk_sort(t_node **pile_a, t_node **pile_b);
-// int prepare_chunks(t_node **pile_a, int **tab, t_chunk **chunks, int *nb_chunks);
 
 #endif

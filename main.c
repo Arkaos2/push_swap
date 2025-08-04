@@ -55,19 +55,12 @@ int main(int argc, char **argv)
 {
 	t_node *pile_a = NULL;
 	t_node *pile_b = NULL;
-
 	int size;
-
+	
 	if (argc < 2)
 		return (0);
-
-	// Initialisation de la pile A
 	init_args(argc, argv, &pile_a);
-
-
 	size = node_size(pile_a);
-
-	// Choix du tri en fonction du nombre d'éléments
 	if (size == 2)
 		sa(&pile_a, 0);
 	else if (size == 3)
